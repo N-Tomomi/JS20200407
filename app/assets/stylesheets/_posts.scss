@@ -1,6 +1,7 @@
 // Place all the styles related to the posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "posts-mixin";
 
 .Header {
   height: 90px;
@@ -15,7 +16,7 @@
 }
 
 .Contents {
-  height: calc(100vh - 90px - 20px);
+  height: calc(100vh - 90px - 20px - 100px);
   width:900px;
   margin: 0 auto;
   background-color: #fffacd;
@@ -26,16 +27,7 @@
     text-align: center;
   }
   &__Btn{
-    display: block;
-    height: 80px;
-    width :360px;
-    margin:0 auto 50px;
-    border-radius: 10px;
-    font-size:20px;
-    color:#fff;
-    text-decoration: none;
-    text-align: center;
-    line-height: 80px;
+    @include Btn;
     &--Icon{
       padding-right:20px;
     }
@@ -48,5 +40,17 @@
     &--Instagram{
       background-color: #fc76bf;
     }
+  }
+}
+
+.Contents__JSBoxes {
+  height: 100px;
+  width:900px;
+  margin: 0 auto;
+  background-color: #ddd;
+  display: flex;
+  justify-content: space-evenly;
+  .Box {
+    @include Box;
   }
 }
